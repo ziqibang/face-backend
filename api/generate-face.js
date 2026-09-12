@@ -27,17 +27,18 @@ export default async function handler(req, res) {
 
   try {
     const prompt = encodeURIComponent(
-      'front-facing black and white studio portrait photo of a person, ' +
-      'dramatic single-direction lighting with strong shadows, neutral ' +
-      'expression, plain background, head and shoulders only, high contrast'
+      'front-facing black and white studio portrait photo of an adult man, ' +
+      'male face, dramatic single-direction lighting with strong shadows, ' +
+      'neutral expression, plain background, head and shoulders only, high contrast'
     );
+    const negativePrompt = encodeURIComponent('woman, female, feminine, girl');
 
     // A random seed per request is what gives you a different face each
     // click — Pollinations returns the same image for the same prompt+seed.
     const seed = Math.floor(Math.random() * 1000000);
     const pollinationsURL =
       `https://image.pollinations.ai/prompt/${prompt}` +
-      `?width=1024&height=1280&seed=${seed}&nologo=true`;
+      `?width=1024&height=1280&seed=${seed}&nologo=true&negative=${negativePrompt}`;
 
     const imgResponse = await fetch(pollinationsURL);
     if (!imgResponse.ok) {
