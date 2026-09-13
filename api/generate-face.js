@@ -29,9 +29,10 @@ export default async function handler(req, res) {
     const prompt = encodeURIComponent(
       'front-facing black and white studio portrait photo of an adult man, ' +
       'male face, dramatic single-direction lighting with strong shadows, ' +
-      'neutral expression, white background, head and shoulders only, high contrast, front facing ID photo, front facing only and very formal'
+      'neutral expression, white background, head and shoulders only, high contrast, front facing ID photo, front facing only and very formal' +
+      'brown skinned, clear highlights'
     );
-    const negativePrompt = encodeURIComponent('woman, female, feminine, girl, side-profile, turning, dark background');
+    const negativePrompt = encodeURIComponent('woman, female, feminine, girl, side-profile, turning, dark background','too light skinned');
 
     // A random seed per request is what gives you a different face each
     // click — Pollinations returns the same image for the same prompt+seed.
