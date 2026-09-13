@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
   try {
     const prompt = encodeURIComponent(
-      'front-facing black and white studio portrait photo of an adult man, ' +
+      'front-facing studio portrait photo of an adult man, ' +
       'male face, dramatic single-direction lighting with strong shadows, ' +
       'neutral expression, white background, head and shoulders only, high contrast, front facing ID photo, front facing only and very formal' +
       'brown skinned, clear highlights'
